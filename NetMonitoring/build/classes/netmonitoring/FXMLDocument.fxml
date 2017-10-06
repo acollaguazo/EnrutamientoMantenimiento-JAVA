@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="919.0" prefWidth="1174.0" styleClass="theme" stylesheets="@StylesCss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="netmonitoring.MainController">
+   <children>
+      <BorderPane layoutY="2.0" prefHeight="917.0" prefWidth="1163.0">
+         <top>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" styleClass="theme" stylesheets="@StylesCss.css" BorderPane.alignment="CENTER">
+               <items>
+                  <Button fx:id="btActualizar" defaultButton="true" mnemonicParsing="false" text="Actualizar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="btRAccess" defaultButton="true" mnemonicParsing="false" text="Remote Access">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </items>
+            </ToolBar>
+         </top>
+         <center>
+            <SplitPane dividerPositions="0.3215507411630559" orientation="VERTICAL" prefHeight="877.0" prefWidth="980.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="278.0" prefWidth="990.0">
+                     <children>
+                        <TableView fx:id="tvDevices" layoutX="224.0" layoutY="18.0" prefHeight="243.0" prefWidth="509.0">
+                          <columns>
+                            <TableColumn fx:id="tcHost" prefWidth="239.0" text="HOSTNAME" />
+                            <TableColumn fx:id="tcIp" minWidth="0.0" prefWidth="316.0" text="IP" />
+                          </columns>
+                        </TableView>
+                        <ImageView fitHeight="200.0" fitWidth="198.0" layoutX="20.0" layoutY="39.0">
+                           <image>
+                              <Image url="@../../logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TabPane prefHeight="563.0" prefWidth="964.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Versión">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextArea fx:id="txtVersion" layoutX="15.0" layoutY="15.0" prefHeight="495.0" prefWidth="875.0">
+                                             <font>
+                                                <Font name="Monospaced Regular" size="12.0" />
+                                             </font></TextArea>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Interfaces">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextArea fx:id="txtInterfaces" layoutX="15.0" layoutY="15.0" prefHeight="495.0" prefWidth="875.0">
+                                             <font>
+                                                <Font name="Monospaced Regular" size="12.0" />
+                                             </font></TextArea>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Routing">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextArea fx:id="txtRouting" layoutX="15.0" layoutY="15.0" prefHeight="495.0" prefWidth="873.0">
+                                             <font>
+                                                <Font name="DejaVu Sans Mono Bold" size="13.0" />
+                                             </font></TextArea>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Configs">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tvConfigs" layoutX="200.0" layoutY="14.0" prefHeight="177.0" prefWidth="529.0">
+                                            <columns>
+                                              <TableColumn fx:id="tcFecha" prefWidth="130.0" text="Fecha" />
+                                              <TableColumn fx:id="tcPath" prefWidth="388.0" text="Path" />
+                                            </columns>
+                                          </TableView>
+                                          <TextArea fx:id="txtConfig" layoutX="15.0" layoutY="203.0" prefHeight="321.0" prefWidth="868.0">
+                                             <font>
+                                                <Font name="DejaVu Sans ExtraLight" size="13.0" />
+                                             </font></TextArea>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Logs">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextArea fx:id="txtLogs" layoutX="15.0" layoutY="15.0" prefHeight="495.0" prefWidth="866.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+         <left>
+            <TableView fx:id="tvCliente" prefHeight="877.0" prefWidth="257.0" styleClass="darkList" stylesheets="@StylesCss.css" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="tcIDC" prefWidth="59.0" text="ID" />
+                <TableColumn fx:id="tcName" prefWidth="190.0" text="NAME" />
+              </columns>
+            </TableView>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
